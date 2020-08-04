@@ -18,7 +18,7 @@
                                 <p class="post-date">{{date("M j, Y", strtotime($post->created_at))}} / {{$post->user->name}}</p>
                                 <h4 class="post-title">{{$post->title}}</h4>
                                 <div class="post-meta">
-                                    <a href="#"><span>by</span> {{$post->user->name}}</a>
+                                    <a href="{{route('autor.blog', ['id'=>$post->user->id])}}" class="post-author"><span>by</span> {{$post->user->name}}</a>
                                     <a href="#"><i class="fa fa-eye"></i> {{$post->saw}}</a>
                                     <a href="#"><i class="fa fa-comments"></i> 08</a>
                                 </div>

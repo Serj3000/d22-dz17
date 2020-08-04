@@ -77,6 +77,9 @@
 
 @include('layouts.navbar')
 
+    </header>
+    <!-- ##### Header Area End ##### -->
+
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <div class="container">

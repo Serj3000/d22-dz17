@@ -30,7 +30,7 @@
                                             <li><a href="{{route('index.blog')}}">Home</a></li>
                                             <li><a href="{{route('archive.blog')}}">Archive Blog</a></li>
                                             {{-- @foreach(\App\Post::latest('created_at')->paginate(1) as $sing) @endforeach --}}
-                                            @foreach(\App\Post::latest('created_at')->paginate() as $sing) @endforeach
+                                            @foreach(\App\Post::latest('created_at')->paginate(1) as $sing) @endforeach
                                             <li><a href="{{route('single-post.blog', ['id'=>$sing->id])}}">Single Post</a></li><!--single-post.html-->
                                             <li><a href="{{route('about-us.blog')}}">About</a></li>
                                             <li><a href="{{route('contact.blog')}}">Contact</a></li>
@@ -69,5 +69,3 @@
                 </div>
             </div>
         </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
