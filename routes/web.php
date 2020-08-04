@@ -143,7 +143,7 @@ Route::get('/autor-{id?}', function(\App\User $id){
         ->latest('created_at')
         ->paginate(5);
 
-    return view('index', ['params'=>$auth]);
+    return view('pages.archive_blog', ['params'=>$auth]);
 })->name('autor.blog');
 
 Route::get('/about-us', function(){

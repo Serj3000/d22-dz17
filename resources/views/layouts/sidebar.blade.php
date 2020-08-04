@@ -55,7 +55,8 @@
                                                 <a href="{{route('single-post.blog', ['id'=>$post->id])}}" class="post-title">
                                                     <h6>{{$post->title}}</h6>
                                                 </a>
-                                                <a href="#" class="post-author"><span>by</span> {{$post->user->name}}</a>
+                                                {{-- <a href="{{route('archive.blog', ['id'=>$post->user->name])}}" class="post-author"><span>by</span> {{$post->user->name}}</a> --}}
+                                                <a href="{{route('autor.blog', ['id'=>$post->user->id])}}" class="post-author"><span>by</span> {{$post->user->name}}</a>
                                             </div>
                                         </div>
                                     @endforeach
