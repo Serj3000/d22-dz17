@@ -77,7 +77,7 @@ Route::get('/category-{slug?}', function($plug=null){
 
     $categ_slug=$categ->post()->latest('created_at')->paginate(5);
 
-    return view('index', ['params'=>$categ_slug]);
+    return view('pages.archive_blog', ['params'=>$categ_slug]);
 })->name('category.blog');
 
 
@@ -161,6 +161,11 @@ Route::get('/typography', function(){
 Route::get('/laravel', function(){
     return view('trash.welcome');
 })->name('welcome.laravel');
+
+Route::fallback(function() {
+    $posts=\App\Post::latest('created_at')->paginate(5);
+    return view('index', ['params'=>$posts]);
+});
 //|------------------------------------------------------------------------
 //|------------------------------------------------------------------------
 //|------------------------------------------------------------------------

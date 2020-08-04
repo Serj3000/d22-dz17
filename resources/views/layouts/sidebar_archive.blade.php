@@ -36,7 +36,7 @@
                                 <ol class="foode-catagories">
                                     @foreach($categories as $category)
                                         {{-- @foreach($category->post as $key ?? ''=>$pos)@endforeach --}}
-                                            <li><a href="{{route('category.blog', ['id'=>$category->id])}}"><span><i class="fa fa-stop" aria-hidden="true"></i> {{$category->name}}</span>
+                                            <li><a href="{{route('category.blog', ['slug'=>$category->slug])}}"><span><i class="fa fa-stop" aria-hidden="true"></i> {{$category->name}}</span>
                                             <?php $key=0; foreach($category->post as $key=>$pos); ?><span>{{$key?$key+1:'0'}}</span></a></li>
                                     @endforeach
                                     {{-- <li><a href="#"><span><i class="fa fa-stop" aria-hidden="true"></i> Drink</span> <span>(18)</span></a></li>
