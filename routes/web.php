@@ -139,9 +139,11 @@ Route::get('/archive-blog', function(){
 
 Route::get('/autor-{id?}', function(\App\User $id){
 
-    $auth=\App\Post::where('user_id',$id->id)
-        ->latest('created_at')
+    $auth=\App\Post::where('user_id', $id->id)
+        ->orderBy('created_at', 'desc')
         ->paginate(5);
+        // ->latest('created_at')
+        // ->paginate(5);
 
     return view('pages.archive_blog', ['params'=>$auth]);
 })->name('autor.blog');
